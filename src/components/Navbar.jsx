@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { TiHomeOutline } from "react-icons/ti";
 import { GrProjects } from "react-icons/gr";
-import { MdOutlineGames } from "react-icons/md";
 import { LuLibraryBig } from "react-icons/lu";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { GrSearch } from "react-icons/gr";
+import { LiaMapMarkedAltSolid } from "react-icons/lia";
+import { IoShareSocialOutline } from "react-icons/io5";
 
 export default function Navbar() {
     const fileInputRef = useRef(null);
@@ -25,8 +25,8 @@ export default function Navbar() {
 
     return (
         <nav>
-            <Link to="/">
-                <TiHomeOutline className="navbar-icon" size={35} />
+            <Link to="/socials">
+                <IoShareSocialOutline className="navbar-icon" size={35} />
             </Link>
             
             <Link to="/trips">
@@ -35,7 +35,7 @@ export default function Navbar() {
             
 
             <div id="plus-icon" onClick={handleFileClick}>
-                <AiOutlinePlus className="plus-icon" size={30} />
+                <TiHomeOutline className="plus-icon" size={30} />
                 <input
                     type="file"
                     accept="video/*"
@@ -47,8 +47,8 @@ export default function Navbar() {
 
             </div>
 
-            <Link to="/games">
-                <GrSearch className="navbar-icon" size={32} />
+            <Link to="/visited">
+                <LiaMapMarkedAltSolid className="navbar-icon" size={34} />
             </Link>
             
             <Link to="/library">
