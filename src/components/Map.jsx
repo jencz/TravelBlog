@@ -82,18 +82,43 @@ export default function JapanOnlyMap() {
                         key={name}
                         position={coordinates}
                         eventHandlers={{
-                            click: () => setSelectedCity(name)
+                            click: () => setSelectedCity(name),
+                            mouseover: (e) => {
+                                e.target.setZIndexOffset(1000);
+                                const tooltip = e.target.getTooltip();
+                                if (tooltip) {
+                                    const el = tooltip.getElement();
+                                    if (el) el.style.zIndex = 1001;
+                                }
+                            },
+                            mouseout: (e) => {
+                                e.target.setZIndexOffset(0);
+                                const tooltip = e.target.getTooltip();
+                                if (tooltip) {
+                                    const el = tooltip.getElement();
+                                    if (el) el.style.zIndex = '';
+                                }
+                            }
                         }}
                     >
-                        <Tooltip direction="top" offset={[-15, -10]} permanent>{name}</Tooltip>
+                        <Tooltip
+                            direction="top"
+                            offset={[-15, -10]}
+                            permanent
+                            interactive
+                        >
+                            {name}
+                        </Tooltip>
                     </Marker>
                 ))}
+
 
             </MapContainer>
             {selectedCity && (
                 <RegionMap
                     cityName={selectedCity}
                     onClose={() => setSelectedCity(null)}
+                    name={name}
                 />
             )}
         </div>

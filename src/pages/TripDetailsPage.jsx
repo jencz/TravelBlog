@@ -7,12 +7,12 @@ export default function TripDetailPage() {
   let newName = name.replaceAll("-", " ");
 
   if (name === "Japan-2024-25") {
-    newName = "Japan 2024-25";
+    newName = "Japan 2024/25";
   }
 
   return (
     <div id="tripdetails-content">
-      <h1>{newName}</h1>
+      <h1>[ {newName} ]</h1>
       <JapanOnlyMap name={name}/>
     </div>
   );
