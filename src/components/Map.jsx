@@ -44,7 +44,7 @@ export default function JapanOnlyMap() {
     }
 
     useEffect(() => {
-        fetch('/japan.geojson') // Place the file in /public
+        fetch(process.env.PUBLIC_URL + '/japan.geojson') // Place the file in /public
             .then((res) => res.json())
             .then((data) => setJapanData(data));
     }, []);
