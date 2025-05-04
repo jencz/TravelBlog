@@ -10,7 +10,7 @@ export default function Trip({src, name}) {
     }
 
     return (
-        <Link to={`/trips/${pathName}`} style={{ textDecoration: 'none', width: '18vw', height: '20vh' }}>
+        <Link to={`/trips/${pathName}`} id="trip-container">
             <div id="trip">
                 <img src={src} alt="" />
                 <h1>{newName}</h1>

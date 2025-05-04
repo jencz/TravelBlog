@@ -8,19 +8,19 @@ import { LiaMapMarkedAltSolid } from "react-icons/lia";
 import { IoShareSocialOutline } from "react-icons/io5";
 
 export default function Navbar() {
-    const fileInputRef = useRef(null);
+    // const fileInputRef = useRef(null);
 
-    const handleFileClick = () => {
-        fileInputRef.current?.click();
-    };
+    // const handleFileClick = () => {
+    //     fileInputRef.current?.click();
+    // };
 
-    const handleFileChange = (event) => {
-        const files = Array.from(event.target.files);
-        if (files.length) {
-            console.log("Selected files:", files);
-            // You can now loop through and handle each file
-        }
-    };
+    // const handleFileChange = (event) => {
+    //     const files = Array.from(event.target.files);
+    //     if (files.length) {
+    //         console.log("Selected files:", files);
+    //         // You can now loop through and handle each file
+    //     }
+    // };
     
 
     return (
@@ -34,18 +34,19 @@ export default function Navbar() {
             </Link>
             
 
-            <div id="plus-icon" onClick={handleFileClick}>
+            {/* <div id="plus-icon" onClick={handleFileClick}> */}
+            <Link to="/" id="plus-icon">
                 <TiHomeOutline className="plus-icon" size={30} />
-                <input
+                {/* <input
                     type="file"
                     accept="video/*"
                     multiple
                     ref={fileInputRef}
                     style={{ display: 'none' }}
                     onChange={handleFileChange}
-                />
-
-            </div>
+                /> */}
+            </Link>
+            {/* </div> */}
 
             <Link to="/visited">
                 <LiaMapMarkedAltSolid className="navbar-icon" size={34} />

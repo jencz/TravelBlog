@@ -19,7 +19,7 @@ body {
 }
 
 .App-logo-container {
-  position: absolute; 
+  position: absolute;
   top: 1em;
   left: 1em;
   width: 10vh;
@@ -27,7 +27,7 @@ body {
 
 .App-logo-dropdown {
   position: absolute;
-  top: 100%; 
+  top: 100%;
   left: 0;
   background-color: white;
   border: 1px solid rgba(141, 141, 141, 0.5);
@@ -47,9 +47,9 @@ body {
 
 .App-logo-container:hover .App-logo-dropdown,
 .App-logo-dropdown:hover {
-  opacity: 1; 
-  transform: translateY(0); 
-  pointer-events: auto; 
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .App-logo {
@@ -72,6 +72,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -142,6 +143,7 @@ nav {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: black;
 }
 
 .plus-icon {
@@ -175,12 +177,18 @@ nav {
   gap: 2em;
   margin-top: 30em;
   overflow: auto;
-  scrollbar-width: none; 
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 #trips::-webkit-scrollbar {
   display: none;
+}
+
+#trip-container {
+  text-decoration: none;
+  width: 18vw;
+  height: 20vh;
 }
 
 #trip {
@@ -266,4 +274,276 @@ nav {
 
 .leaflet-container {
   background-color: white !important;
+}
+
+/*
+================================
+--------------------------------
+THIS SECTION IS FOR MOBILE VIEW
+--------------------------------
+================================
+*/
+
+@media (max-width: 520px) {
+  body {
+    margin: 0;
+    font-family: "Rubik Mono One", monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  } */
+
+  #App {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .App-logo-container {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 10vh;
+  }
+
+  .App-logo-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid rgba(141, 141, 141, 0.5);
+    box-shadow: 0px 0px 10px rgba(141, 141, 141, 0.5);
+    border-radius: 0.5em;
+    width: 10vh;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 20vh;
+  }
+
+  .App-logo-container:hover .App-logo-dropdown,
+  .App-logo-dropdown:hover {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .App-logo {
+    height: 10vh;
+    border: 1px solid rgba(141, 141, 141, 0.5);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(141, 141, 141, 0.5);
+  }
+
+
+
+
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 5s linear;
+    }
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* about page  */
+  #about-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #about {
+    width: 80%;
+
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    border-left: 3px solid rgba(141, 141, 141, 0.5);
+  }
+
+  #about h1 {
+    padding-left: 1em;
+    margin: 0;
+  }
+
+  #about p {
+    padding-left: 2em;
+  }
+
+  /* navbar */
+
+  nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 8%;
+    border: 1px solid rgba(141, 141, 141, 0.5);
+    border-radius: 3em;
+    box-shadow: 0px 0px 10px rgba(141, 141, 141, 0.5);
+    margin-bottom: 5em;
+    background-color: white;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .navbar-icon {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: black;
+  }
+
+  .navbar-icon:hover {
+    transform: scale(1.5);
+  }
+
+  #plus-icon {
+    background-color: rgba(141, 141, 141, 0.5);
+    box-shadow: 0px 0px 10px rgba(141, 141, 141, 0.5);
+    border-radius: 50%;
+    padding: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: black;
+  }
+
+  .plus-icon {
+    transition: transform 0.3s ease;
+  }
+
+  #plus-icon:hover .plus-icon {
+    transform: scale(1.5);
+  }
+
+  /* trips page */
+
+  #trips-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #trips {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 1em;
+    align-items: center;
+    margin-top: 30em;
+  }
+
+
+  #trips::-webkit-scrollbar {
+    display: none;
+  }
+
+  #trip-container {
+    text-decoration: none;
+    width: 95%;
+    height: 20%;
+  }
+
+  .trip {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+
+  #trip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #trip h1 {
+    position: absolute;
+    color: black;
+    font-size: 1.2em;
+    opacity: 0;
+    z-index: 2;
+    width: 50%;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+
+
+
+  #trip:hover {
+    cursor: pointer;
+  }
+
+  #trip::before,
+  #trip h1 {
+    opacity: 0.7 !important;
+    /* Force them to always be visible */
+  }
+
+
+
+  /* trip details page */
+  #tripdetails-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #tripdetails-content h1 {
+    margin-top: 7em;
+    font-size: 1.5em;
+  }
+
+
+  #map-container {
+    position: relative;
+    height: 45%;
+    width: 80%;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+  }
+
+  .leaflet-container {
+    background-color: white !important;
+  }
 }

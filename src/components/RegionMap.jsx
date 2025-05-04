@@ -161,7 +161,7 @@ export default function RegionMap({ cityName, onClose, name }) {
                     center={region.bounds}
                     zoom={region.zoom}
                     style={{ height: '100%', width: '100%' }}
-                    minZoom={region.zoom}
+                    minZoom={region.zoom - 1}
                     maxZoom={region.zoom + 1}
                     dragging={false}
                     scrollWheelZoom={false}
